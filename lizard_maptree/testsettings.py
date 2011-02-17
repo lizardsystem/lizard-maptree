@@ -12,6 +12,7 @@ SITE_ID = 1
 INSTALLED_APPS = [
     'lizard_maptree',
     'lizard_ui',
+    'lizard_map',
     'staticfiles',
     'compressor',
     'django_nose',

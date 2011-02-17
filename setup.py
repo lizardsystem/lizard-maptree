@@ -14,8 +14,10 @@ install_requires = [
     'django-staticfiles',
     'django-extensions',
     'lizard-ui',
+    'lizard-map',
     'django-nose',
     'pkginfo',
+    'django-treebeard'
     ],
 
 tests_require = [
