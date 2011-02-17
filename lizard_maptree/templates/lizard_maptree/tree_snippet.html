@@ -11,10 +11,10 @@
         {% include tree_template %}
       {% endwith %}
     </ul>
-  {% else %}{# child.type == 'shape' #}
+  {% else %}{# child.type == 'workspace-acceptable' #}
     <div class="workspace-acceptable"
          data-adapter-layer-json="{{ child.adapter_layer_json }}"
-         data-adapter-class="adapter_shapefile"
+         data-adapter-class={{ child.adapter_name }}
          data-name="{{ child.name }}">
     {{ child.name }}
       {% if child.description %}{# show info button if description available #}

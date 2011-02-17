@@ -10,9 +10,9 @@
   </h2>
   <ul id="area-pane"
       class="automatic-tree filetree pane">
-    {% if shapes_tree %}
+    {% if tree %}
       {% with "lizard_maptree/tree_snippet.html" as tree_template %}
-        {% with shapes_tree as tree_items %}
+        {% with tree as tree_items %}
           {% include tree_template %}
         {% endwith %}
       {% endwith %}

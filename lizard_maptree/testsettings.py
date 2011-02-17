@@ -13,6 +13,7 @@ INSTALLED_APPS = [
     'lizard_maptree',
     'lizard_ui',
     'lizard_map',
+    'south',
     'staticfiles',
     'compressor',
     'django_nose',
