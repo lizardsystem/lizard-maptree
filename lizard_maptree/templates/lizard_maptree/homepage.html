@@ -1,12 +1,12 @@
 {% extends "lizard_map/wms.html" %}
 {% load workspaces %}
 
-{% block subtitle %} Shape {% endblock %}
+{% block subtitle %}{{ title }}{% endblock %}
 
 {% block sidebar %}
 <div class="sidebarbox sidebarbox-stretched">
   <h2>
-  {% firstof parent_category.name 'Kaartlagen' %}
+  {% firstof parent_category.name sidebar_title 'Kaarten' %}
   </h2>
   <ul id="area-pane"
       class="automatic-tree filetree pane">

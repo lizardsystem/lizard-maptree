@@ -16,7 +16,9 @@ def homepage(request,
              item_models=None,
              javascript_click_handler='popup_click_handler',
              javascript_hover_handler='popup_hover_handler',
-             template="lizard_maptree/homepage.html"):
+             template="lizard_maptree/homepage.html",
+             title='',
+             sidebar_title='Kaarten'):
 
     """
     item_models: i.e. ['wmssource', ] (in lower case!) ->
@@ -78,12 +80,17 @@ def homepage(request,
     date_range_form = DateRangeForm(
         current_start_end_dates(request, for_form=True))
 
+    context_dict = {
+        'javascript_hover_handler': javascript_hover_handler,
+        'javascript_click_handler': javascript_click_handler,
+        'date_range_form': date_range_form,
+        'workspaces': workspaces,
+        'tree': tree,
+        'parent_category': parent_category,
+        'title': title,
+        'sidebar_title': sidebar_title}
+
     return render_to_response(
         template,
-        {'javascript_hover_handler': javascript_hover_handler,
-         'javascript_click_handler': javascript_click_handler,
-         'date_range_form': date_range_form,
-         'workspaces': workspaces,
-         'tree': tree,
-         'parent_category': parent_category},
+        context_dict,
         context_instance=RequestContext(request))
