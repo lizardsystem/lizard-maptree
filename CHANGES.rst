@@ -2,7 +2,7 @@ Changelog of lizard-maptree
 ===================================================
 
 
-0.1 (unreleased)
+0.1 (2011-03-01)
 ----------------
 
 - Added title and sidebar_title options to default view.
