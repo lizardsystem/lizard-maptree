@@ -42,3 +42,9 @@ Finally add urls to your urls.py. Typically::
      'lizard_wms.views.homepage',
      name='lizard_wms.homepage'),
     (r'^map/', include('lizard_map.urls')),
+
+Testing
+-------
+
+For testing purposes, a dummy workspace-acceptable is added when no
+models are associated with Category.
