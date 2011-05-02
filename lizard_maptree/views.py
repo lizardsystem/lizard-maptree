@@ -4,10 +4,6 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from lizard_map.daterange import DateRangeForm
-from lizard_map.daterange import current_start_end_dates
-from lizard_map.workspace import WorkspaceManager
-
 from lizard_maptree.models import Category
 
 
@@ -44,7 +40,7 @@ def homepage(request,
                        'type': 'workspace-acceptable',
                        'description': 'description',
                        'adapter_layer_json': '"json"',
-                       'adapter_name': 'adapter'},]
+                       'adapter_name': 'adapter'}, ]
             return result
         for item_model_name in item_models:
             item_model_set = '%s_set' % item_model_name
@@ -75,16 +71,9 @@ def homepage(request,
         parent_category = get_object_or_404(Category, slug=root_slug)
     tree = get_tree(parent_category, item_models)
 
-    workspace_manager = WorkspaceManager(request)
-    workspaces = workspace_manager.load_or_create()
-    date_range_form = DateRangeForm(
-        current_start_end_dates(request, for_form=True))
-
     context_dict = {
         'javascript_hover_handler': javascript_hover_handler,
         'javascript_click_handler': javascript_click_handler,
-        'date_range_form': date_range_form,
-        'workspaces': workspaces,
         'tree': tree,
         'parent_category': parent_category,
         'title': title,
