@@ -2,7 +2,7 @@ Changelog of lizard-maptree
 ===================================================
 
 
-0.2 (unreleased)
+0.2 (2011-05-02)
 ----------------
 
 - Removed unnecessary workspace manager and date_range_form.
