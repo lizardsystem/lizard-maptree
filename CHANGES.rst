@@ -2,8 +2,8 @@ Changelog of lizard-maptree
 ===================================================
 
 
-0.3 (unreleased)
-----------------
+0.3
+---
 
 - Changed views to classes to work with latest lizard-map. Updated
   templates to reflect this.
