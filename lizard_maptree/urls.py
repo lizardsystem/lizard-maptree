@@ -3,16 +3,16 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
 
+from lizard_maptree.views import MaptreeHomepageView
 
 admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$',
-     'lizard_maptree.views.homepage',
+    url(r'^$', MaptreeHomepageView.as_view(), 
      name='lizard_maptree.homepage'),
     url(r'^category/(?P<root_slug>.*)/$',
-     'lizard_maptree.views.homepage',
+     WmsHomepageView.as_view(),
      name='lizard_maptree.homepage'),
     (r'^map/', include('lizard_map.urls')),
     )

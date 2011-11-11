@@ -6,13 +6,13 @@
 {% block sidebar %}
 <div class="sidebarbox sidebarbox-stretched">
   <h2>
-  {% firstof parent_category.name sidebar_title 'Kaarten' %}
+  {% firstof view.parent_category.name view.sidebar_title 'Kaarten' %}
   </h2>
   <ul id="area-pane"
       class="automatic-tree filetree pane">
-    {% if tree %}
+    {% if view.tree %}
       {% with "lizard_maptree/tree_snippet.html" as tree_template %}
-        {% with tree as tree_items %}
+        {% with view.tree as tree_items %}
           {% include tree_template %}
         {% endwith %}
       {% endwith %}
@@ -22,10 +22,7 @@
   </ul>
 </div>
 
-{% for workspace in workspaces.user %}
-  {% workspace workspace %}
-{% empty %}
-No workspace
-{% endfor %}
+{% workspace_edit view.workspace_edit %}
+{% collage_edit view.collage_edit %}
 
 {% endblock %}

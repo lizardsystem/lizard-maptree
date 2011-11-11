@@ -5,7 +5,11 @@ Changelog of lizard-maptree
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Changed views to classes to work with latest lizard-map. Updated
+  templates to reflect this.
+
+- Changed setup.py to require at least the currently latest 
+  lizard-map (3.4.2) and lizard-ui (3.7).
 
 
 0.2 (2011-05-02)
