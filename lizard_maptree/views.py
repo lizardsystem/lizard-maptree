@@ -64,7 +64,7 @@ class MaptreeHomepageView(AppView):
     def get(self, request, *args, **kwargs):
         self.javascript_hover_handler = kwargs.get('javascript_hover_handler', 'popup_hover_handler')
         self.javascript_click_handler = kwargs.get('javascript_click_handler', 'popup_click_handler')
-        self.title = kwargs.get('title', '')
+        #self.title = kwargs.get('title', '')
         self.sidebar_title = kwargs.get('sidebar_title', 'Kaarten')
         self.root_slug = kwargs.get('root_slug', None)
         self.item_models = kwargs.get('item_models', None)
@@ -79,7 +79,7 @@ class MaptreeHomepageView(AppView):
             if self.root_slug is not None:
                 self._parent_category = get_object_or_404(Category, slug=self.root_slug)
         return self._parent_category
-            
+
     def tree(self):
         if self._tree is None:
             self._tree = self._get_tree(self.parent_category(), self.item_models)
