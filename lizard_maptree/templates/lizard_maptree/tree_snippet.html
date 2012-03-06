@@ -12,15 +12,18 @@
       {% endwith %}
     </ul>
   {% else %}{# child.type == 'workspace-acceptable' #}
-    <div class="workspace-acceptable"
-         data-adapter-layer-json="{{ child.adapter_layer_json }}"
-         data-adapter-class={{ child.adapter_name }}
-         data-name="{{ child.name }}">
-    {{ child.name }}
-      {% if child.description %}{# show info button if description available #}
-      <span class="ss_sprite ss_information sidebarbox-action-icon legend-tooltip">&nbsp;</span>
-      <div class="tooltip">{% autoescape off %}{{ child.description }}{% endautoescape %}</div>
-      {% endif %}
+    <div
+       {% if child.description %}
+         class="workspace-acceptable has_popover"
+         data-content="{{ child.description }}"
+         title="{{ child.name }}"
+       {% else %}
+         class="workspace-acceptable"
+       {% endif %}
+       data-adapter-layer-json="{{ child.adapter_layer_json }}"
+       data-adapter-class="{{ child.adapter_name }}"
+       data-name="{{ child.name }}">
+      {{ child.name }}
     </div>
   {% endifequal %}
 </li>

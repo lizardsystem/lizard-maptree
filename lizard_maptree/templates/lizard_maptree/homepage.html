@@ -4,12 +4,12 @@
 {% block subtitle %}{{ title }}{% endblock %}
 
 {% block sidebar %}
-<div class="sidebarbox sidebarbox-stretched">
+<div class="sidebarbox">
   <h2>
-  {% firstof view.parent_category.name view.sidebar_title 'Kaarten' %}
+    {% firstof view.parent_category.name view.sidebar_title 'Kaarten' %}
   </h2>
   <ul id="area-pane"
-      class="automatic-tree filetree pane">
+      class="tree tree-top-level">
     {% if view.tree %}
       {% with "lizard_maptree/tree_snippet.html" as tree_template %}
         {% with view.tree as tree_items %}
