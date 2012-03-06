@@ -9,11 +9,11 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', MaptreeHomepageView.as_view(), 
-     name='lizard_maptree.homepage'),
+    url(r'^$', MaptreeHomepageView.as_view(),
+        name='lizard_maptree.homepage'),
     url(r'^category/(?P<root_slug>.*)/$',
-     WmsHomepageView.as_view(),
-     name='lizard_maptree.homepage'),
+        WmsHomepageView.as_view(),
+        name='lizard_maptree.homepage'),
     (r'^map/', include('lizard_map.urls')),
     )
 

@@ -1,14 +1,11 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
-
 from django.shortcuts import get_object_or_404
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from lizard_map.views import MapView
 
 from lizard_maptree.models import Category
 
-from lizard_map.views import AppView
 
-class MaptreeHomepageView(AppView):
+class MaptreeHomepageView(MapView):
     """
     item_models: i.e. ['wmssource', ] (in lower case!) ->
        category.__getattribute__('wmssource_set').all()
@@ -19,6 +16,15 @@ class MaptreeHomepageView(AppView):
     """
 
     template_name = "lizard_maptree/homepage.html"
+    edit_link = '/admin/lizard_wms/wmssource/'
+
+    javascript_hover_handler = 'popup_hover_handler'
+    javascript_click_handler = 'popup_click_handler'
+    sidebar_title = 'Kaarten'
+    root_slug = None
+    item_models = ['wmssource',]
+    _parent_category = None
+    _tree = None
 
     def _treeitems(self, category, item_models=None):
         """
@@ -60,19 +66,6 @@ class MaptreeHomepageView(AppView):
         if parent is not None:
             result += self._treeitems(parent, item_models=item_models)
         return result
-
-    def get(self, request, *args, **kwargs):
-        self.javascript_hover_handler = kwargs.get('javascript_hover_handler', 'popup_hover_handler')
-        self.javascript_click_handler = kwargs.get('javascript_click_handler', 'popup_click_handler')
-        #self.title = kwargs.get('title', '')
-        self.sidebar_title = kwargs.get('sidebar_title', 'Kaarten')
-        self.root_slug = kwargs.get('root_slug', None)
-        self.item_models = kwargs.get('item_models', None)
-
-        self._parent_category = None
-        self._tree = None
-
-        return super(MaptreeHomepageView, self).get(request, *args, **kwargs)
 
     def parent_category(self):
         if self._parent_category is None:
