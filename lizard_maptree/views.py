@@ -22,7 +22,7 @@ class MaptreeHomepageView(MapView):
     javascript_click_handler = 'popup_click_handler'
     sidebar_title = 'Kaarten'
     root_slug = None
-    item_models = ['wmssource',]
+    item_models = ['wmssource', ]
     _parent_category = None
     _tree = None
 
@@ -70,10 +70,12 @@ class MaptreeHomepageView(MapView):
     def parent_category(self):
         if self._parent_category is None:
             if self.root_slug is not None:
-                self._parent_category = get_object_or_404(Category, slug=self.root_slug)
+                self._parent_category = get_object_or_404(
+                    Category, slug=self.root_slug)
         return self._parent_category
 
     def tree(self):
         if self._tree is None:
-            self._tree = self._get_tree(self.parent_category(), self.item_models)
+            self._tree = self._get_tree(self.parent_category(),
+                                        self.item_models)
         return self._tree
