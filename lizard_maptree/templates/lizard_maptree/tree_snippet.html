@@ -1,18 +1,19 @@
 {# the variables tree_template and tree_items must be defined before entering #}
 {# tree_items is a list of dicts with properties name, url, children #}
-{% for acceptable in tree_items %}
-<li>
-  {% ifequal acceptable.workspace_type 'category' %}
-    {% if acceptable.url %}<a href="{{ acceptable.url }}">{% endif %}
-    <span class="folder">{{ acceptable.name }}</span
-    {% if acceptable.url %}</a>{% endif %}
-    <ul>
-      {% with acceptable.children as tree_items %}
-        {% include tree_template %}
-      {% endwith %}
-    </ul>
-  {% else %}{# acceptable.type == 'workspace-acceptable' #}
-	{{ acceptable.to_html }}
-  {% endifequal %}
-</li>
+{% for tree_item in tree_items %}
+  <li>
+    {% ifequal tree_item.workspace_type 'category' %}
+      {% if tree_item.url %}<a href="{{ tree_item.url }}">{% endif %}
+      <span class="folder">{{ tree_item.name }}</span>
+      {% if tree_item.url %}</a>{% endif %}
+      <ul>
+        {% with tree_item.children as tree_items %}
+          {% include tree_template %}
+        {% endwith %}
+      </ul>
+    {% else %}
+      {# tree_item.type == 'workspace-acceptable' #}
+      {{ tree_item.to_html }}
+    {% endifequal %}
+  </li>
 {% endfor %}
