@@ -1,5 +1,6 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
 from django.shortcuts import get_object_or_404
+from lizard_ui.layout import WorkspaceAcceptable
 from lizard_map.views import MapView
 
 from lizard_maptree.models import Category
@@ -29,7 +30,7 @@ class MaptreeHomepageView(MapView):
     def _treeitems(self, category, item_models=None):
         """
         result = [{'name': 'testname',
-        'type': 'workspace-acceptable',
+        'workspace-type': 'workspace-acceptable',
         'description': 'description',
         'adapter_layer_json': '"json"',
         'adapter_name': 'adapter'},]
@@ -37,11 +38,12 @@ class MaptreeHomepageView(MapView):
         result = []
         if item_models is None:
             # Add dummy
-            result = [{'name': 'dummy workspace-acceptable',
-                       'type': 'workspace-acceptable',
-                       'description': 'description',
-                       'adapter_layer_json': '"json"',
-                       'adapter_name': 'adapter'}, ]
+            result = [WorkspaceAcceptable(
+                    name='workspace-acceptable',
+                    workspace_type='workspace-acceptable',
+                    description='description',
+                    adapter_layer_json='"json"',
+                    adapter_name='adapter')]
             return result
         for item_model_name in item_models:
             item_model_set = '%s_set' % item_model_name
@@ -59,7 +61,7 @@ class MaptreeHomepageView(MapView):
             # Append sub categories.
             children = self._get_tree(parent=category, item_models=item_models)
             row = {'name': category.name,
-                   'type': 'category',
+                   'workspace_type': 'category',
                    'children': children}
             result.append(row)
         # Append workspace-acceptables.

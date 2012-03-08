@@ -2,7 +2,7 @@
 {# tree_items is a list of dicts with properties name, url, children #}
 {% for acceptable in tree_items %}
 <li>
-  {% ifequal acceptable.type 'category' %}
+  {% ifequal acceptable.workspace_type 'category' %}
     {% if acceptable.url %}<a href="{{ acceptable.url }}">{% endif %}
     <span class="folder">{{ acceptable.name }}</span
     {% if acceptable.url %}</a>{% endif %}
@@ -12,7 +12,7 @@
       {% endwith %}
     </ul>
   {% else %}{# acceptable.type == 'workspace-acceptable' #}
-	{% include "lizard_map/workspace_acceptable.html" %}
+	{{ acceptable.to_html }}
   {% endifequal %}
 </li>
 {% endfor %}
