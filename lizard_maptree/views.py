@@ -1,6 +1,6 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
 from django.shortcuts import get_object_or_404
-from lizard_ui.layout import WorkspaceAcceptable
+from lizard_map.lizard_widgets import WorkspaceAcceptable
 from lizard_map.views import MapView
 
 from lizard_maptree.models import Category
@@ -40,10 +40,9 @@ class MaptreeHomepageView(MapView):
             # Add dummy
             result = [WorkspaceAcceptable(
                     name='workspace-acceptable',
-                    workspace_type='workspace-acceptable',
-                    description='description',
                     adapter_layer_json='"json"',
-                    adapter_name='adapter')]
+                    adapter_name='adapter',
+                    description='description')]
             return result
         for item_model_name in item_models:
             item_model_set = '%s_set' % item_model_name
