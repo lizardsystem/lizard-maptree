@@ -18,15 +18,26 @@ class MaptreeHomepageView(MapView):
 
     template_name = "lizard_maptree/homepage.html"
     edit_link = '/admin/lizard_wms/wmssource/'
-    page_title = 'Kaarten'
 
     javascript_hover_handler = 'popup_hover_handler'
     javascript_click_handler = 'popup_click_handler'
-    sidebar_title = 'Kaarten'
-    root_slug = None
     item_models = ['wmssource', ]
     _parent_category = None
     _tree = None
+
+    @property
+    def sidebar_title(self):
+        return self.page_title
+
+    @property
+    def root_slug(self):
+        return self.kwargs.get('root_slug')
+
+    @property
+    def page_title(self):
+        if not self.root_slug:
+            return super(MaptreeHomepageView, self).page_title
+        return self.parent_category().name
 
     def _treeitems(self, category, item_models=None):
         """

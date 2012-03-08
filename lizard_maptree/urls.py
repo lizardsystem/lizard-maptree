@@ -11,9 +11,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', MaptreeHomepageView.as_view(),
         name='lizard_maptree.homepage'),
-    url(r'^category/(?P<root_slug>.*)/$',
-        WmsHomepageView.as_view(),
-        name='lizard_maptree.homepage'),
+    # ^^^ Actually, we're really called from lizard_wms's urls
     (r'^map/', include('lizard_map.urls')),
     )
 

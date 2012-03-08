@@ -4,6 +4,10 @@ Changelog of lizard-maptree
 0.4 (unreleased)
 ----------------
 
+- Using new lizard-ui (with twitter bootstrap).
+
+- Returning good page title and fixed category handling.
+
 
 0.3 (2011-11-11)
 ----------------
@@ -11,7 +15,7 @@ Changelog of lizard-maptree
 - Changed views to classes to work with latest lizard-map. Updated
   templates to reflect this.
 
-- Changed setup.py to require at least the currently latest 
+- Changed setup.py to require at least the currently latest
   lizard-map (3.4.2) and lizard-ui (3.7).
 
 
