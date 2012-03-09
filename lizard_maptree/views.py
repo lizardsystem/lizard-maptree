@@ -2,6 +2,7 @@
 from django.shortcuts import get_object_or_404
 from lizard_map.lizard_widgets import WorkspaceAcceptable
 from lizard_map.views import MapView
+from lizard_ui.layout import Action
 
 from lizard_maptree.models import Category
 
@@ -26,10 +27,6 @@ class MaptreeHomepageView(MapView):
     _tree = None
 
     @property
-    def sidebar_title(self):
-        return self.page_title
-
-    @property
     def root_slug(self):
         return self.kwargs.get('root_slug')
 
@@ -38,6 +35,16 @@ class MaptreeHomepageView(MapView):
         if not self.root_slug:
             return super(MaptreeHomepageView, self).page_title
         return self.parent_category().name
+
+    @property
+    def breadcrumbs(self):
+        according_to_ui = super(MaptreeHomepageView, self).breadcrumbs
+        if not self.root_slug:
+            return according_to_ui
+        category = self.parent_category()
+        extra = Action(name=category.name)
+        according_to_ui.append(extra)
+        return according_to_ui
 
     def _treeitems(self, category, item_models=None):
         """
