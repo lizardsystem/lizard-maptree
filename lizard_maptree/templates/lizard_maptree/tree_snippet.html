@@ -4,7 +4,7 @@
   <li>
     {% ifequal tree_item.workspace_type 'category' %}
       {% if tree_item.url %}<a href="{{ tree_item.url }}">{% endif %}
-      <span class="folder">{{ tree_item.name }}</span>
+      <{{ tree_item.heading }}>{{ tree_item.name }}</{{ tree_item.heading }}>
       {% if tree_item.url %}</a>{% endif %}
       <ul>
         {% with tree_item.children as tree_items %}

@@ -69,17 +69,21 @@ class MaptreeHomepageView(MapView):
                 result.append(item.workspace_acceptable())
         return result
 
-    def _get_tree(self, parent=None, item_models=None):
+    def _get_tree(self, parent=None, item_models=None, heading_level=3):
         """
         Make tree for homepage using Category and Shape.
         """
         result = []
+        heading = 'h%s' % heading_level
         categories = Category.objects.filter(parent=parent)
         for category in categories:
             # Append sub categories.
-            children = self._get_tree(parent=category, item_models=item_models)
+            children = self._get_tree(parent=category,
+                                      item_models=item_models,
+                                      heading_level=heading_level + 1)
             row = {'name': category.name,
                    'workspace_type': 'category',
+                   'heading': heading,
                    'children': children}
             result.append(row)
         # Append workspace-acceptables.
