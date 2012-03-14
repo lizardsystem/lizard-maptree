@@ -20,8 +20,6 @@ class MaptreeHomepageView(MapView):
     template_name = "lizard_maptree/homepage.html"
     edit_link = '/admin/lizard_wms/wmssource/'
 
-    javascript_hover_handler = 'popup_hover_handler'
-    javascript_click_handler = 'popup_click_handler'
     item_models = ['wmssource', ]
     _parent_category = None
     _tree = None
