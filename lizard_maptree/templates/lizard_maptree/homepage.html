@@ -7,8 +7,8 @@
 <div class="sidebarbox">
   <h2>{{ view.page_title }}</h2>
   <ul id="area-pane"
-      class="tree tree-top-level">
-    {% if view.tree %}
+      class="without-bullets">
+      {% if view.tree %}
       {% with "lizard_maptree/tree_snippet.html" as tree_template %}
         {% with view.tree as tree_items %}
           {% include tree_template %}

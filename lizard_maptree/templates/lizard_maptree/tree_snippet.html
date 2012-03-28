@@ -6,7 +6,7 @@
       {% if tree_item.url %}<a href="{{ tree_item.url }}">{% endif %}
       <{{ tree_item.heading }}>{{ tree_item.name }}</{{ tree_item.heading }}>
       {% if tree_item.url %}</a>{% endif %}
-      <ul>
+      <ul class="without-bullets">
         {% with tree_item.children as tree_items %}
           {% include tree_template %}
         {% endwith %}
