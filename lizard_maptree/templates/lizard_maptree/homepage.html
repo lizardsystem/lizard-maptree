@@ -4,13 +4,11 @@
 {% block subtitle %}{{ title }}{% endblock %}
 
 {% block sidebar %}
-<div class="sidebarbox sidebarbox-stretched">
-  <h2>
-  {% firstof view.parent_category.name view.sidebar_title 'Kaarten' %}
-  </h2>
+<div class="sidebarbox">
+  <h2>{{ view.page_title }}</h2>
   <ul id="area-pane"
-      class="automatic-tree filetree pane">
-    {% if view.tree %}
+      class="without-bullets">
+      {% if view.tree %}
       {% with "lizard_maptree/tree_snippet.html" as tree_template %}
         {% with view.tree as tree_items %}
           {% include tree_template %}
@@ -21,8 +19,5 @@
     {% endif %}
   </ul>
 </div>
-
-{% workspace_edit view.workspace_edit %}
-{% collage_edit view.collage_edit %}
 
 {% endblock %}
