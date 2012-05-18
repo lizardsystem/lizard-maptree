@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-0.4 (unreleased)
+1.0 (2012-05-18)
 ----------------
 
 - Using new lizard-ui (with twitter bootstrap).
