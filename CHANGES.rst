@@ -4,7 +4,8 @@ Changelog of lizard-maptree
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fixed MANIFEST.in (it contained the non-existing ``lizard-maptree``
+  directory instead of ``lizard_maptree``).
 
 
 1.0 (2012-05-18)
