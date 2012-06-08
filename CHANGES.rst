@@ -4,8 +4,7 @@ Changelog of lizard-maptree
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Add a custom label for the category selection field.
 
 1.0.1 (2012-05-18)
 ------------------
