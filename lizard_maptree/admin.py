@@ -9,12 +9,12 @@ def category_ancestors(obj):
 def category_descendants(obj):
     return ', '.join([a.name for a in obj.get_descendants()])
 
-class CustomModelChoiceField(forms.ModelChoiceField):
+class ParentCategoryField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         return "%s (%s)" % (obj.name, obj.slug)
 
 class CategoryForm(forms.ModelForm):
-    parent = CustomModelChoiceField(queryset=Category.objects.all())
+    parent = ParentCategoryField(queryset=Category.objects.all(), required=False)
     class Meta:
         model = Category
 
