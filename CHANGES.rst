@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.1 (unreleased)
+1.1 (2012-06-19)
 ----------------
 
 - Add a custom label for the category selection field in the admin.
