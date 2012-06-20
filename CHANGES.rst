@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.2 (unreleased)
+1.2 (2012-06-20)
 ----------------
 
 - Removed custom breadcrumb handling. See
