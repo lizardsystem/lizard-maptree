@@ -67,7 +67,7 @@ class MaptreeHomepageView(MapView):
                 result.append(item.workspace_acceptable())
         return result
 
-    def _get_tree(self, parent=None, item_models=None, heading_level=3):
+    def _get_tree(self, parent=None, item_models=None, heading_level=2):
         """
         Make tree for homepage using Category and Shape.
         """
