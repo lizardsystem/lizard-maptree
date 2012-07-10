@@ -34,15 +34,17 @@ class MaptreeHomepageView(MapView):
             return super(MaptreeHomepageView, self).page_title
         return self.parent_category().name
 
-    @property
-    def breadcrumbs(self):
-        according_to_ui = super(MaptreeHomepageView, self).breadcrumbs
-        if not self.root_slug:
-            return according_to_ui
-        category = self.parent_category()
-        extra = Action(name=category.name)
-        according_to_ui.append(extra)
-        return according_to_ui
+    # Commented it out for the moment: it doesn't work when there's no parent
+    # category. It also seems to have logical errors in here.
+    # @property
+    # def breadcrumbs(self):
+    #     according_to_ui = super(MaptreeHomepageView, self).breadcrumbs
+    #     if not self.root_slug:
+    #         return according_to_ui
+    #     category = self.parent_category()
+    #     extra = Action(name=category.name)
+    #     according_to_ui.append(extra)
+    #     return according_to_ui
 
     def _treeitems(self, category, item_models=None):
         """

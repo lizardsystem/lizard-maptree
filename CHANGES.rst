@@ -1,11 +1,23 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.1 (unreleased)
+1.3 (unreleased)
 ----------------
 
 - Removed title from left sidebar as it also appears in the breadcrums.
 
+
+1.2 (2012-06-20)
+----------------
+
+- Removed custom breadcrumb handling. See
+  https://github.com/lizardsystem/lizard-maptree/issues/2.
+
+
+1.1 (2012-06-19)
+----------------
+
+- Add a custom label for the category selection field in the admin.
 
 1.0.1 (2012-05-18)
 ------------------
