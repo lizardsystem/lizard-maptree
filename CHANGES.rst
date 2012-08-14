@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.4 (unreleased)
+1.4 (2012-08-14)
 ----------------
 
 - Removed title from left sidebar as it also appears in the breadcrums.
