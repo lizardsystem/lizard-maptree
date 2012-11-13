@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.5 (unreleased)
+1.5 (2012-11-13)
 ----------------
 
 - Added description field to categories.
