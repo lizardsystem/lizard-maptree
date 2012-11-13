@@ -27,5 +27,11 @@ class Category(AL_Node):
         verbose_name_plural = _('categories')
         ordering = ('name', )
 
+    def hierarchy(self):
+        """Return string that's useful for sorting and finding categories."""
+        return ' -> '.join(['Root'] +
+                           [a.slug for a in self.get_ancestors()] +
+                           [self.slug])
+
     def __unicode__(self):
-        return '%s' % (self.name)
+        return self.hierarchy()
