@@ -24,6 +24,7 @@ class CategoryForm(forms.ModelForm):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'hierarchy', category_descendants)
     list_filter = ('parent', )
+    prepopulated_fields = {'slug': ('name',)}
     form = CategoryForm
 
 
