@@ -16,6 +16,7 @@ class Category(AL_Node):
         help_text='i.e. max debiet.')
     slug = models.SlugField(
         max_length=20, unique=True)
+    description = models.TextField(null=True, blank=True)
     parent = models.ForeignKey(
         'Category', null=True, blank=True)
 
