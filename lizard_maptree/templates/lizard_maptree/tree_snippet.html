@@ -4,7 +4,16 @@
   <li>
     {% ifequal tree_item.workspace_type 'category' %}
       {% if tree_item.url %}<a href="{{ tree_item.url }}">{% endif %}
-      <{{ tree_item.heading }}>{{ tree_item.name }}</{{ tree_item.heading }}>
+      <{{ tree_item.heading }}
+          {% if tree_item.description %}
+          title="{{ tree_item.name }}"
+          class="has_popover"
+          data-content="{{ tree_item.description }}"
+          {% endif %}
+          >
+        <pre>{{ tree_item }}</pre>
+        {{ tree_item.name }}
+      </{{ tree_item.heading }}>
       {% if tree_item.url %}</a>{% endif %}
       <ul class="tree">
         {% with tree_item.children as tree_items %}
