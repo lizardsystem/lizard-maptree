@@ -4,7 +4,9 @@ Changelog of lizard-maptree
 1.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added description field to categories.
+
+- Improved the admin interface a bit.
 
 
 1.4 (2012-08-14)
