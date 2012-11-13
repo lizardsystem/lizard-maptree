@@ -1,8 +1,8 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
+# from lizard_ui.layout import Action
 from django.shortcuts import get_object_or_404
 from lizard_map.lizard_widgets import WorkspaceAcceptable
 from lizard_map.views import MapView
-from lizard_ui.layout import Action
 
 from lizard_maptree.models import Category
 
@@ -84,6 +84,7 @@ class MaptreeHomepageView(MapView):
             row = {'name': category.name,
                    'workspace_type': 'category',
                    'heading': heading,
+                   'description': category.description,
                    'children': children}
             result.append(row)
         # Append workspace-acceptables.
