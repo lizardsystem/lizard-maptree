@@ -4,10 +4,6 @@ from django import forms
 from lizard_maptree.models import Category
 
 
-def category_ancestors(obj):
-    return ' -> '.join(['root'] + [a.slug for a in obj.get_ancestors()])
-
-
 def category_descendants(obj):
     return ', '.join([a.name for a in obj.get_descendants()])
 
@@ -26,9 +22,8 @@ class CategoryForm(forms.ModelForm):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'slug', category_ancestors,
-                    category_descendants)
-    list_filter = ('name', 'parent', 'slug', )
+    list_display = ('name', 'slug', 'hierarchy', category_descendants)
+    list_filter = ('parent', )
     form = CategoryForm
 
 
