@@ -1,5 +1,6 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
 from django.db import models
+from django.utils.translation import ugettext as _
 from treebeard.al_tree import AL_Node
 
 
@@ -22,6 +23,8 @@ class Category(AL_Node):
     node_order_by = ['name']
 
     class Meta:
+        verbose_name = _('category')
+        verbose_name_plural = _('categories')
         ordering = ('name', )
 
     def __unicode__(self):
