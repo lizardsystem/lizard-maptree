@@ -1,8 +1,8 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.6 (unreleased)
-----------------
+1.5.1 (2012-11-19)
+------------------
 
 - Removed left-over debug info in the template.
 
