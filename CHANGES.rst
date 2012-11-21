@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.6 (unreleased)
+1.6 (2012-11-21)
 ----------------
 
 - Added index field to Category to enable sorting.
