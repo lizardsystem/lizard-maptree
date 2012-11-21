@@ -1,5 +1,8 @@
 lizard-maptree
-==========================================
+==============
+
+.. image:: https://secure.travis-ci.org/lizardsystem/lizard-maptree.png?branch=master
+   :target: http://travis-ci.org/#!/lizardsystem/lizard-maptree
 
 Introduction
 ------------
