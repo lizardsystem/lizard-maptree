@@ -17,16 +17,18 @@ class Category(AL_Node):
     slug = models.SlugField(
         max_length=20, unique=True)
     description = models.TextField(null=True, blank=True)
+    index = models.IntegerField(default=1000,
+        help_text="Number used for ordering categories relative to each other.")
     parent = models.ForeignKey(
         'Category', null=True, blank=True)
 
     # For treebeard.
-    node_order_by = ['name']
+    node_order_by = ['index', 'name']
 
     class Meta:
         verbose_name = _('category')
         verbose_name_plural = _('categories')
-        ordering = ('name', )
+        ordering = ('index', 'name')
 
     def hierarchy(self):
         """Return string that's useful for sorting and finding categories."""

@@ -17,7 +17,8 @@ install_requires = [
     'lizard-map >= 3.4.2',
     'django-nose',
     'pkginfo',
-    'django-treebeard'
+    'django-treebeard',
+    'factory_boy'
     ],
 
 tests_require = [

@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'lizard_ui',
     'lizard_security',
     'south',
-    'staticfiles',
+    'django.contrib.staticfiles',
     'compressor',
     'django_nose',
     'django_extensions',
@@ -30,12 +30,23 @@ INSTALLED_APPS = [
 ROOT_URLCONF = 'lizard_maptree.urls'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+SKIP_SOUTH_TESTS = True
+SOUTH_TESTS_MIGRATE = False
 
-# Used for django-staticfiles
+# Used for django.contrib.staticfiles
 STATIC_URL = '/static_media/'
+MEDIA_URL = '/'
+MEDIA_ROOT = 'media'
+STATICFILES_FINDERS = (
+    "compressor.finders.CompressorFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    )
+COMPRESS_ROOT = 'media'
+COMPRESS_ENABLED = False
 TEMPLATE_CONTEXT_PROCESSORS = (
     # Default items.
-    "django.core.context_processors.auth",
+    "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
