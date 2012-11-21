@@ -9,6 +9,7 @@ notifications:
     on_success: change
   email: false
 install:
+  - deactivate
   - python bootstrap.py
   - bin/buildout
 script:
