@@ -4,7 +4,13 @@ Changelog of lizard-maptree
 1.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added index field to Category to enable sorting.
+
+- Improved test infrastructure.
+
+- Added to Travis CI.
+
+- PEP8 changes.
 
 
 1.5.1 (2012-11-19)
