@@ -4,7 +4,7 @@ python:
 before_install:
   - wget http://reinout.vanrees.org/download/mapnik_0.7_i386.deb
   - sudo apt-get install python-psycopg2 libgeos-dev python-imaging python-matplotlib python-pyproj gdebi-core
-  - sudo gdebi mapnik*.deb
+  - sudo gdebi -n mapnik*.deb
 notifications:
   irc:
     channels: "irc.freenode.org#nens"
