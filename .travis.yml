@@ -3,7 +3,8 @@ python:
   - 2.7
 before_install:
   - wget -q http://packages.lizardsystem.nl/ubuntu/public.gpg -O- | sudo apt-key add -
-  - sudo echo 'deb http://packages.lizardsystem.nl/ubuntu/precise32/ ./' >> /etc/apt/sources.list
+  - sudo add-apt-repository 'deb http://packages.lizardsystem.nl/ubuntu/precise32/ ./'
+  - cat /etc/apt/sources.list
   - sudo aptitude update
   - sudo apt-get install python-psycopg2 libgeos-dev python-imaging python-matplotlib python-pyproj python-mapnik
 notifications:
