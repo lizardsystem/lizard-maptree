@@ -55,6 +55,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'staticfiles.context_processors.static_url',
     )
 
+LIZARD_MAPTREE_STANDALONE = True
 
 try:
     # Import local settings that aren't stored in svn.

@@ -4,7 +4,8 @@ Changelog of lizard-maptree
 1.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fixed urls.py, so it won't recusively include other lizard-* URLs when
+  running as part of a site.
 
 
 1.7 (2012-11-27)
