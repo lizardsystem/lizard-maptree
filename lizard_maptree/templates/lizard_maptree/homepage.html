@@ -1,7 +1,14 @@
 {% extends "lizard_map/wms.html" %}
+{# 20130212 TODO: move animation stuff to lizard-map? #}
 {% load workspaces %}
 
 {% block subtitle %}{{ title }}{% endblock %}
+
+{% block map-javascript %}
+{{ block.super }}
+  <script type="text/javascript"
+          src="{{ STATIC_URL }}lizard_wms/animations.js"></script>
+{% endblock %}
 
 {% block sidebar %}
 <div class="sidebarbox">
@@ -17,6 +24,27 @@
       <li>Geen kaartlagen beschikbaar.</li>
     {% endif %}
   </ul>
+</div>
+
+{# TODO: add some sort of if for animations #}
+
+<div class="sidebarbox">
+  <div id="controls" class="well">
+    <div id="control-status">
+      <label>Timestep: <span id="time">1</span></label>
+      <div id="slider"></div><br />
+    </div>
+    <div id="control-buttons">
+      <a class="btn btn-start-stop" href="#">
+        <i class="icon-play"></i>
+        <span id="html-start-stop">Start</span>
+      </a>
+      <a class="btn btn-reset" href="#">
+        <i class="icon-retweet"></i>
+        Reset
+      </a>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
