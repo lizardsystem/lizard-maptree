@@ -4,7 +4,12 @@ Changelog of lizard-maptree
 1.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Improved edit_link (it filters wms sources on category, when applicable,
+  now).
+
+- Added ``get_absolute_url()`` to categories. Note that this needs lizard-wms
+  to be installed: one more reason to include lizard-maptree in lizard-wms one
+  day.
 
 
 1.8 (2012-12-19)
