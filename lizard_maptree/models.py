@@ -1,4 +1,5 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext as _
 from treebeard.al_tree import AL_Node
@@ -38,3 +39,8 @@ class Category(AL_Node):
 
     def __unicode__(self):
         return self.hierarchy()
+
+    def get_absolute_url(self):
+        # We need lizard-wms, as our url is defined there.
+        # This is *no* sane separation of apps.
+        return reverse('lizard_wms.homepage', kwargs={'root_slug': self.slug})
