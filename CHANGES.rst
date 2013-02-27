@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.9 (unreleased)
+1.9 (2013-02-27)
 ----------------
 
 - Improved edit_link (it filters wms sources on category, when applicable,
