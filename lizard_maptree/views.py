@@ -1,5 +1,6 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
 # from lizard_ui.layout import Action
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from lizard_map.lizard_widgets import WorkspaceAcceptable
 from lizard_map.views import MapView
@@ -29,7 +30,7 @@ class MaptreeHomepageView(MapView):
 
     @property
     def edit_link(self):
-        url = '/admin/lizard_wms/wmssource/'
+        url = reverse('admin:lizard_wms_wmssource_changelist')
         if self.root_slug:
             # We're the root, show all wms sources.
             category = get_object_or_404(Category, slug=self.root_slug)
