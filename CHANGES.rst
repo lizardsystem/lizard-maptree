@@ -4,7 +4,7 @@ Changelog of lizard-maptree
 1.10 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Added slug to tree_item.
 
 
 1.9 (2013-02-27)
