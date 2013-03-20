@@ -91,6 +91,7 @@ class MaptreeHomepageView(MapView):
                                       item_models=item_models,
                                       heading_level=heading_level + 1)
             row = {'name': category.name,
+                   'slug': category.slug,
                    'workspace_type': 'category',
                    'heading': heading,
                    'description': category.description,
