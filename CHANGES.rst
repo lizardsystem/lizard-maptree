@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.11 (unreleased)
+1.11 (2014-08-08)
 -----------------
 
 - Made lizard-maptree compatible with Django 1.6.5. Requires
