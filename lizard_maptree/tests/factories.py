@@ -6,9 +6,10 @@ import factory
 from lizard_maptree.models import Category
 
 
-class CategoryFactory(factory.Factory):
+class CategoryFactory(factory.DjangoModelFactory):
     """Factory for creating Category instances"""
-    FACTORY_FOR = Category
+    class Meta:
+        model = Category
 
     @classmethod
     def _prepare(cls, create, **kwargs):
