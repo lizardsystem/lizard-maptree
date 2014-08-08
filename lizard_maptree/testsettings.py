@@ -57,6 +57,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 LIZARD_MAPTREE_STANDALONE = True
 
+SECRET_KEY = "Does not need to be secret"
+
 try:
     # Import local settings that aren't stored in svn.
     from lizard_maptree.local_testsettings import *
