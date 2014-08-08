@@ -1,5 +1,7 @@
 # (c) Nelen & Schuurmans.  GPL licensed, see LICENSE.txt.
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns
+from django.conf.urls import url
+from django.conf.urls import include
 from django.conf import settings
 from django.contrib import admin
 
@@ -18,5 +20,5 @@ if getattr(settings, 'LIZARD_MAPTREE_STANDALONE', False):
         '',
         (r'^map/', include('lizard_map.urls')),
         (r'^admin/', include(admin.site.urls)),
-        (r'', include('staticfiles.urls')),
+        (r'', include('django.contrib.staticfiles.urls')),
     )
