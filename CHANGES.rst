@@ -1,7 +1,7 @@
 Changelog of lizard-maptree
 ===================================================
 
-1.11 (unreleased)
+1.12 (2014-09-03)
 -----------------
 
 - Stop requiring lizard-map/-ui < 5.0, we want to release 5.0 soon.
