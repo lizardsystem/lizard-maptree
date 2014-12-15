@@ -4,13 +4,7 @@ Changelog of lizard-maptree
 1.14 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
-
-1.13 (2014-09-03)
------------------
-
-- Nothing changed yet.
+- Re-releasing for lizard5.
 
 
 1.11 (2014-08-08)
